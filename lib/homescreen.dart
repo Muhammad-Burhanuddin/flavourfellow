@@ -1,7 +1,10 @@
 import 'package:flavour_fellow/findyourtable.dart';
 import 'package:flavour_fellow/helpcenter.dart';
 import 'package:flavour_fellow/invitefriend.dart';
+import 'package:flavour_fellow/loyaltypoints.dart';
+import 'package:flavour_fellow/perferences.dart';
 import 'package:flavour_fellow/settings.dart';
+import 'package:flavour_fellow/signin.dart';
 import 'package:flavour_fellow/utils/colors.dart';
 import 'package:flavour_fellow/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -86,7 +89,13 @@ class _MainPageState extends State<MainPage> {
                     title: Text('Home'),
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const LoyaltyPoint(),
+                        ),
+                      );
+                    },
                     leading: Icon(Icons.power_input),
                     title: Text('flavour fellow loyalty points'),
                   ),
@@ -113,12 +122,13 @@ class _MainPageState extends State<MainPage> {
                     title: Text('Table reservations'),
                   ),
                   ListTile(
-                    onTap: () {},
-                    leading: Icon(Icons.table_bar_outlined),
-                    title: Text('Allergens'),
-                  ),
-                  ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const Perferences(),
+                        ),
+                      );
+                    },
                     leading: Icon(Icons.room_preferences_outlined),
                     title: Text('Preferences'),
                   ),
@@ -148,7 +158,13 @@ class _MainPageState extends State<MainPage> {
                     color: Colors.grey,
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).pop(
+                        MaterialPageRoute(
+                          builder: (context) => const SignIn(),
+                        ),
+                      );
+                    },
                     leading: Icon(
                       Icons.logout_outlined,
                       color: Colors.red,
